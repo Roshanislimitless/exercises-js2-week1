@@ -21,3 +21,5 @@ var phone = {
     megapixels: 12,
     Batterylife : "24 hours"
 }
+
+console.log(phone.Batterylife);
