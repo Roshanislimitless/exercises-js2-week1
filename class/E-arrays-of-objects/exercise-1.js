@@ -23,18 +23,30 @@ var person3 = {
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
+function nameFunction(person){
+    return person.name;
+
+}
+
+function younger(something){
+        if (something.age < 28){
+        return something.name;
+}
+    
+};
 
 
-var persons = // Complete here
 
-var personNames = // Complete here
+var persons = [person1, person2, person3];
 
-var personsYoungerThan28YearsOld = // Complete here
+var personNames = persons.map(nameFunction);
 
-
+var personsYoungerThan28YearsOld = persons.filter(younger);
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
+console.log(personsYoungerThan28YearsOld);
+
 
 console.log("Question 1: array defined with 3 persons -> ", 
     (persons[0] === person1 && persons[1] === person2 && persons[2] === person3) ? 'Passed :)' : 'Not yet :(');
