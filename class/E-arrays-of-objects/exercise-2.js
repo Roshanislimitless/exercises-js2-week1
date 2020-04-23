@@ -38,13 +38,24 @@ var travelDestinations = [destination1, destination2, destination3, destination4
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
+// let x = function (name){
+//     if (name.distanceKms < 500){
+//         return name.destinationName
+//     }
+
+// }
+
+// let y = function (dtn){
+//      return dtn.destinationName;
+// }
 
 
-var destinationNamesWithin500Kms = // Complete here
+var destinationNamesWithin500Kms = travelDestinations.filter((name) => { if (name.distanceKms <= 500){ return name.destinationName}}).map((name) => name.destinationName);
 
-var destinationNameReachableByFerry = // Complete here
 
-var destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+// var destinationNameReachableByFerry = // Complete here
+
+// var destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*
@@ -52,5 +63,5 @@ DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
 console.log("Question 1) Expected result: Edinburgh,Dublin, actual result: " + destinationNamesWithin500Kms);
-console.log("Question 2) Expected result: Dublin, actual result: " + destinationNameReachableByFerry);
-console.log("Question 3) Expected result: London,Paris, actual result: " + destinationNamesMoreThan300KmsAwayByTrain);
+// console.log("Question 2) Expected result: Dublin, actual result: " + destinationNameReachableByFerry);
+// console.log("Question 3) Expected result: London,Paris, actual result: " + destinationNamesMoreThan300KmsAwayByTrain);
