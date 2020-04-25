@@ -55,7 +55,11 @@ var mentors = [
         company: "Google",
         position: "Senior developer",
         city: "Barcelona"
-      }
+      },
+    addSkill: function(skill){
+      this.skills.push(skill);
+      return this.skills;
+    }
   },
   {
     firstName: "Leo",
@@ -68,7 +72,11 @@ var mentors = [
         company: "FC Barcelona",
         position: "Player",
         city: "Barcelona"
-      }
+      },
+    addStudentLikes: function (likes){
+      this.studentlikes += likes;
+    }
+    
   },
   {
     firstName: "John",
@@ -99,4 +107,90 @@ var mentors = [
 
 ];
 
-//YOUR CODE HERE
+// mentors.forEach((items) => {
+//   if ( items.job.city === "Barcelona" && items.skills.includes("React")){
+//     console.log(items.firstName + " " + items.lastName) 
+//   }
+// })
+
+////...................................................................................................
+// let y = mentors.filter((items) => {
+//   if (items.job.city === "Barcelona") {
+//     return items.class = "june 1" && items.skills.push("SQL")
+//   }
+// })
+// console.log(y)
+
+////.....................................................................................................
+
+// let addSkillObject = mentors[0].addSkill("newskill");
+// console.log(addSkillObject);
+
+
+
+// function addSkill(mentors, newSkill) {
+//   let y;
+//   for ( i = 0; i < mentors.length; i++){
+//     mentors[i].skills.push(newSkill)
+//    y =  mentors[i].skills;
+//   }
+//   return y;
+// }
+
+// console.log(addSkill(mentors, "newskill"));
+// console.log(mentors);
+
+////................................................................................................
+
+// function filterF(mentors, tofilter) {
+//   return mentors.map((any) => {
+
+//     let index = any.skills.indexOf(tofilter);
+
+//     if (any.skills.includes(tofilter)) {
+//       any.skills.splice(index, 1);
+//       return any.skills
+//     } else {
+//       return any.skills;
+//     }
+//   })
+
+// }
+
+// console.log(filterF(mentors, "React"));
+////...................................................................................................
+
+// function maxLength(mentors){
+//   x = Math.max(...mentors.map( (example) => example.skills.length))
+//   return mentors.filter((any) => {
+//     if ( x === any.skills.length){
+//       return any;
+//     }
+//   }).map((any) => any.firstName)
+  
+
+  
+// }
+
+// console.log(maxLength(mentors));
+
+////....................................................................................................
+
+function incrementLikes(likes) {
+  mentors.map((any) => any.studentLikes += likes)
+}
+
+incrementLikes(3);
+console.log(mentors);
+
+////....................................................................................................
+
+
+
+
+
+
+
+
+
+

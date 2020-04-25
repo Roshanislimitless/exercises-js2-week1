@@ -54,19 +54,32 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
-
 var restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
-    findAvailableRestaurants: function(numberOfPeople) {
-        // Complete here
+    findAvailableRestaurants: function (numberOfPeople) {
+
+        return this.restaurants.filter(function filterPeople(resturantArray) {
+            if (numberOfPeople <= (resturantArray.totalSeats - resturantArray.numberOfCustomers)) {
+                return resturantArray.name;
+            }
+        }).map((restaurant_name) => restaurant_name.name)
     },
-    findRestaurantServingDish: function(dishName) {
-        // Complete here
+    findRestaurantServingDish: function (dishName) {
+
+        return this.restaurants.filter(function (rest) {
+            if (rest.menu.includes(dishName)) {
+                return rest;
+            }
+        }).map((nameFinal) => nameFinal.name)
     },
     countNumberOfRestaurantsInArea: function(area) {
-        // Complete here
+        return this.restaurants.filter((findAreaThroughArray) => {
+             if ( findAreaThroughArray.address.area === area){
+                 return findAreaThroughArray;
+             }
+        }).length
     }
 };
 

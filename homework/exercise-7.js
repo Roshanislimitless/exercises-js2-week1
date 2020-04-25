@@ -39,6 +39,21 @@ var writers = [
   },
 ];
 
+writers.forEach((values) => {
+  console.log(`Hi, my name is ${values.firstName} ${values.lastName}. I am ${values.age} years old, and work as a ${values.occupation}`)
+})
+
+let x = writers.filter( function (writer){
+  if( writer.alive === true ){
+    return writer;
+  }
+}).forEach((arrayItems)=> console.log(arrayItems.firstName + " " + arrayItems.lastName) )
+
+
+
+
+
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
