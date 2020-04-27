@@ -50,12 +50,39 @@ WRITE YOUR CODE BELOW
 // }
 
 
-var destinationNamesWithin500Kms = travelDestinations.filter((name) => { if (name.distanceKms <= 500){ return name.destinationName}}).map((name) => name.destinationName);
+var destinationNamesWithin500Kms = travelDestinations.filter((name) => {
+    if (name.distanceKms <= 500) {
+        return name.destinationName
+    }
+}).map((name) => name.destinationName);
+
+function select(name) {
+    if (name.transportations.includes("ferry")) {
+        return name.destinationName;
+    }
+
+}
+
+var destinationNameReachableByFerry = travelDestinations.filter(select).map((name) => name.destinationName);
 
 
-// var destinationNameReachableByFerry = // Complete here
 
-// var destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+
+
+
+
+var destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.forEach(
+    (any) => {
+        if (any.distanceKms >= 300 && any.transportations.includes("train")) {
+            console.log(any.destinationName);
+
+        }
+
+    }
+);
+
+
+
 
 
 /*
@@ -63,5 +90,5 @@ DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
 console.log("Question 1) Expected result: Edinburgh,Dublin, actual result: " + destinationNamesWithin500Kms);
-// console.log("Question 2) Expected result: Dublin, actual result: " + destinationNameReachableByFerry);
-// console.log("Question 3) Expected result: London,Paris, actual result: " + destinationNamesMoreThan300KmsAwayByTrain);
+console.log("Question 2) Expected result: Dublin, actual result: " + destinationNameReachableByFerry);
+console.log("Question 3) Expected result: London,Paris, actual result: " + destinationNamesMoreThan300KmsAwayByTrain);

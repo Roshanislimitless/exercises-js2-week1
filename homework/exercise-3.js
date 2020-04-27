@@ -21,13 +21,13 @@ var coffeeMachine = {
 
     },
     getCoffee: function(coffee) {
-     if (coffee === "flatWhite" && this.insertedAmount>= 3){
+     if (this.insertedAmount >= this.prices.coffee){
          return "Please take your flatWhite";
      }
-     else if ( coffee === "cappuccino" && this.insertedAmount >= 2.40){
+     else if (this.insertedAmount >= this.prices.coffee){
          return "Please take your cappuccino";
      }
-     else if ( coffee === "blackCoffee" && this.insertedAmount >= 1.50){
+     else if (this.insertedAmount >= this.prices.coffee){
          return "Please take your blackCoffee"
      }
      else {

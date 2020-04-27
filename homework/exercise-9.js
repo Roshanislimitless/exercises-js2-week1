@@ -35,55 +35,103 @@ var product1 = {
   price: 12.98,
   stock: 105
 };
-var product1 = {
+
+var product2 = {
   id: 2,
   name: "Watch Rocker",
   price: 9.99,
   stock: 2
 };
 
-products.push(product1);
+var product3 = {
+  id: 3,
+  name: "Microwave",
+  price: 40.25,
+  stock: 10
+};
+
+var product4 = {
+  id: 4,
+  name: "Heater",
+  price: 15.33,
+  stock: 6
+};
+
+products.push(product1, product2, product3, product4);
 
 var shoppingCart = {
   totalPrice: 0,
-  selectedProducts = []
+  selectedProducts: []
 };
 
 function addToShoppingCart(id){
+  products.filter((any) => {
+    if ( id === any.id){
+      shoppingCart.selectedProducts.push(any);
+      shoppingCart.totalPrice += any.price;
+    }
+  })
 
 }
-
-function removeFromShoppingCart(id){
-
-}
-
-function shop(){
-
-}
-
-//results
-addToShoppingCart(1);
-console.log("Step 1");
-console.log("Total Price = " + shoppingCart.totalPrice);
-console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
 addToShoppingCart(2);
-console.log("Step 2");
-console.log("Total Price = " + shoppingCart.totalPrice);
-console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
-addToShoppingCart(4);
-console.log("Step 3");
-console.log("Total Price = " + shoppingCart.totalPrice);
-console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
-removeFromShoppingCart(2);
-console.log("Step 4");
-console.log("Total Price = " + shoppingCart.totalPrice);
-console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
-shop();
-console.log("Step 5");
-console.log("Total Price = " + shoppingCart.totalPrice);
-console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
-console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+addToShoppingCart(3);
+console.log(shoppingCart);
+
+
+// function removeFromShoppingCart(id){
+//    let selectedProducts = shoppingCart.selectedProducts
+//     selectedProducts.filter( (any) => {
+//        var index = any.indexOf(any.id);
+//        return index;
+//   })
+
+
+
+let m = function remover(id ){
+let v = shoppingCart.selectedProducts.forEach((any) => {
+  if (any.id === 2) {
+    console.log(any);
+  }
+})
+let a = shoppingCart.selectedProducts.indexOf(v);
+return a;
+}
+
+console.log(m(2));
+
+
+  
+
+
+
+
+// function shop(){
+
+// }
+
+// //results
+// addToShoppingCart(1);
+// console.log("Step 1");
+// console.log("Total Price = " + shoppingCart.totalPrice);
+// console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
+// console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+// addToShoppingCart(2);
+// console.log("Step 2");
+// console.log("Total Price = " + shoppingCart.totalPrice);
+// console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
+// console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+// addToShoppingCart(4);
+// console.log("Step 3");
+// console.log("Total Price = " + shoppingCart.totalPrice);
+// console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
+// console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+// removeFromShoppingCart(2);
+// console.log("Step 4");
+// console.log("Total Price = " + shoppingCart.totalPrice);
+// console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
+// console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+// shop();
+// console.log("Step 5");
+// console.log("Total Price = " + shoppingCart.totalPrice);
+// console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
+// console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
