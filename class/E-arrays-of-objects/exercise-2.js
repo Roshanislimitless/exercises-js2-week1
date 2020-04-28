@@ -38,56 +38,76 @@ var travelDestinations = [destination1, destination2, destination3, destination4
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
-// let x = function (name){
-//     if (name.distanceKms < 500){
-//         return name.destinationName
-//     }
+//1 by filter and map............................................................
+ function destinationWithin500(array){
+     if ( array.distanceKms <= 500){
+         return array.destinationName;
+     }
+ }
 
-// }
+ function nameExtraction(array){
+     return array.destinationName;
+ }
 
-// let y = function (dtn){
-//      return dtn.destinationName;
-// }
+ var destinationNamesWithin500Kms = travelDestinations.filter(destinationWithin500).map(nameExtraction);
 
-
-var destinationNamesWithin500Kms = travelDestinations.filter((name) => {
-    if (name.distanceKms <= 500) {
-        return name.destinationName
+ //2 by filter and map............................................................
+function byFerry(array){
+    if (array.transportations.includes("ferry")){
+        return array;
     }
-}).map((name) => name.destinationName);
-
-function select(name) {
-    if (name.transportations.includes("ferry")) {
-        return name.destinationName;
-    }
-
 }
 
-var destinationNameReachableByFerry = travelDestinations.filter(select).map((name) => name.destinationName);
+destinationNameReachableByFerry = travelDestinations.filter(byFerry).map(nameExtraction);
 
+//3 by map and filter..............................................................
 
+// function three100KmPlusAndTrain(array){
+//  if ( array.distanceKms > 300 && array.transportations.includes("train")){
+//      return array;
+//  }
+// }
 
+// var destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(three100KmPlusAndTrain).map(nameExtraction)
 
-
-
-
-var destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.forEach(
-    (any) => {
-        if (any.distanceKms >= 300 && any.transportations.includes("train")) {
-            console.log(any.destinationName);
+// 3 by using loop...................................................................
+let destinationNamesMoreThan300KmsAwayByTrain = [];
+function three100KmPlusAndTrain(array){
+    
+    for (let index = 0; index < array.length; index++) {
+        if ( array[index].distanceKms > 300 && array[index].transportations.includes("train")){
+           var x = array[index].destinationName;
+           destinationNamesMoreThan300KmsAwayByTrain.push(x)
 
         }
-
+        
     }
-);
+    return destinationNamesMoreThan300KmsAwayByTrain;
+}
+
+three100KmPlusAndTrain(travelDestinations);
 
 
 
 
 
-/*
-DO NOT EDIT ANYTHING BELOW THIS LINE
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /*
+// DO NOT EDIT ANYTHING BELOW THIS LINE
+// */
 
 console.log("Question 1) Expected result: Edinburgh,Dublin, actual result: " + destinationNamesWithin500Kms);
 console.log("Question 2) Expected result: Dublin, actual result: " + destinationNameReachableByFerry);
