@@ -39,15 +39,32 @@ var writers = [
   },
 ];
 
-writers.forEach((values) => {
-  console.log(`Hi, my name is ${values.firstName} ${values.lastName}. I am ${values.age} years old, and work as a ${values.occupation}`)
-})
+// function toSentence(array){
+//   for (let i= 0; i < array.length; i++) {
+//     console.log(`hi my is ${array[i].firstName} ${array[i].lastName} and i am ${array[i].age} years old  `)
+    
+//   }
 
-let x = writers.filter( function (writer){
-  if( writer.alive === true ){
-    return writer;
+// }
+// toSentence(writers);
+writers.forEach((anyArray) => {
+  return console.log(`Hi my name is ${anyArray.firstName} ${anyArray.lastName} and i am ${anyArray.age} years old.`)
+} )
+
+function areAlive( array){
+  for (let index = 0; index < array.length; index++) {
+    if ( array[index].alive){
+      console.log(array[index].firstName +" " + array[index].lastName)
+    }
+    
   }
-}).forEach((arrayItems)=> console.log(arrayItems.firstName + " " + arrayItems.lastName) )
+}
+
+areAlive(writers)
+
+
+
+
 
 
 

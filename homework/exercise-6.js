@@ -35,14 +35,22 @@ var storeBranches = {
 
 // # 1
 // prints [ 'glasgow', 'edinburgh' ]
-console.log(Object.keys(storeBranches))
+let totalKeys = Object.keys(storeBranches);
+console.log(totalKeys);
 
-// # 2
-// prints [ 'manager', 'assistant', 'interns' ]
-console.log(Object.keys(storeBranches.glasgow))
+// // # 2
+// // prints [ 'manager', 'assistant', 'interns' ]
+var oneOftheTwoKey = storeBranches.glasgow;
+var keysInsideglassgow = Object.keys(oneOftheTwoKey)
+console.log(oneOftheTwoKey)
 
-// # 3
-// prints [ 'head_intern', 'intern' ]
-console.log(Object.keys(storeBranches.edinburgh.interns))
+// // # 
+var position = storeBranches.glasgow;
+var positionOfInterns = position.interns;
+var positionkeysOfInterns = Object.keys(positionOfInterns);
+console.log(positionkeysOfInterns);
 
-// ONLY EDIT ABOVE THIS LINE
+// // prints [ 'head_intern', 'intern' ]
+
+
+// // ONLY EDIT ABOVE THIS LINE

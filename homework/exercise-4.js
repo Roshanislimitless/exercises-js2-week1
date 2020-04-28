@@ -58,30 +58,64 @@ var restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
+    //.......................solution 1 by loop and methods...................................
     findAvailableRestaurants: function (numberOfPeople) {
+        // let y = []
+        // for(i = 0; i < restaurants.length; i++){
+        //     if (numberOfPeople <= (this.restaurants[i].totalSeats - this.restaurants[i].numberOfCustomers)){
+        //         y.push(this.restaurants[i].name);
+        //     }
+        // }
+        // return y;
+        return this.restaurants.filter((anyArray) => {
+                 if ( numberOfPeople <= anyArray.totalSeats - anyArray.numberOfCustomers){
+                     return anyArray;
+        }
+    
+                               }).map((anyArra) => anyArra.name)
+        },
 
-        return this.restaurants.filter(function filterPeople(resturantArray) {
-            if (numberOfPeople <= (resturantArray.totalSeats - resturantArray.numberOfCustomers)) {
-                return resturantArray.name;
-            }
-        }).map((restaurant_name) => restaurant_name.name)
-    },
+                
+    //.......................solution 2 by loop and methods............................
     findRestaurantServingDish: function (dishName) {
-
-        return this.restaurants.filter(function (rest) {
-            if (rest.menu.includes(dishName)) {
-                return rest;
+        // let restaurantServingdish = [];
+        // for (let index = 0; index < this.restaurants.length; index++) {
+        // if ( this.restaurants[index].menu.includes(dishName)){
+        //     restaurantServingdish.push(this.restaurants[index].name)
+        // }
+            
+        // }
+        // return restaurantServingdish;
+        return this.restaurants.filter((anyArray) => {
+            if ( anyArray.menu.includes(dishName)){
+                return anyArray.name;
             }
-        }).map((nameFinal) => nameFinal.name)
+        }).map((anyArray) => anyArray.name);
     },
-    countNumberOfRestaurantsInArea: function(area) {
-        return this.restaurants.filter((findAreaThroughArray) => {
-             if ( findAreaThroughArray.address.area === area){
-                 return findAreaThroughArray;
-             }
+
+//..............solution 3 by loop and methods.......................................
+     countNumberOfRestaurantsInArea: function(area) {
+        //  let x = [];
+        //  for (let index = 0; index < this.restaurants.length; index++) {
+        //      if( this.restaurants[index].address.area === area){
+        //          x.push(this.restaurants[index].name);
+                
+        //      }
+             
+             
+        //  }
+        //  return x.length;
+
+
+        return this.restaurants.filter((anyArray) => {
+            if (anyArray.address.area === area){
+                return anyArray;
+            }
         }).length
-    }
-};
+}
+
+}
+
 
 
 /*

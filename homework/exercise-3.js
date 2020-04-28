@@ -21,22 +21,14 @@ var coffeeMachine = {
 
     },
     getCoffee: function(coffee) {
-     if (this.insertedAmount >= this.prices.coffee){
-         return "Please take your flatWhite";
-     }
-     else if (this.insertedAmount >= this.prices.coffee){
-         return "Please take your cappuccino";
-     }
-     else if (this.insertedAmount >= this.prices.coffee){
-         return "Please take your blackCoffee"
-     }
-     else {
-         return `Sorry You don't have enough money for a ${coffee}`;
-     }
+        if ( this.insertedAmount >= this.prices[coffee]){
+            return `Please, take your ${coffee}`
+        }
+        else return `Sorry, you dont have enough money for ${coffee}`
     }
-};
 
 
+}
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
